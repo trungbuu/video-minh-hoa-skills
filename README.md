@@ -7,7 +7,7 @@ Hai skill biến một tài liệu thành video hoạt hình có giọng đọc 
 | [`video-minh-hoa-doc`](skills/video-minh-hoa-doc/SKILL.md) | dọc 9:16, 1080×1920 | TikTok, Reels, Shorts, Zalo, xem trên điện thoại |
 | [`video-minh-hoa-ngang`](skills/video-minh-hoa-ngang/SKILL.md) | ngang 16:9, 1920×1080 | YouTube, đào tạo, màn hình chiếu, website |
 
-Hướng dẫn trực quan có video mẫu: [docs/index.html](docs/index.html) (bật GitHub Pages thư mục `docs` để xem trên web).
+Hướng dẫn trực quan có video mẫu nằm ở [docs/index.html](docs/index.html). Mở thẳng bằng trình duyệt sau khi tải về, hoặc đưa cả thư mục `docs` (gồm `index.html` và `media/`) lên website của bạn.
 
 ## Cài đặt
 
