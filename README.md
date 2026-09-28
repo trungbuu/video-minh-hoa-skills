@@ -9,15 +9,20 @@ Hai skill biến một tài liệu thành video hoạt hình có giọng đọc 
 
 Hướng dẫn trực quan có video mẫu nằm ở [docs/index.html](docs/index.html). Mở thẳng bằng trình duyệt sau khi tải về, hoặc đưa cả thư mục `docs` (gồm `index.html` và `media/`) lên website của bạn.
 
-## Cài đặt
+## Cài đặt cho người không viết code
 
-```bash
-git clone https://github.com/trungbuu/video-minh-hoa-skills.git
-cd video-minh-hoa-skills
-./install.sh            # chép hai skill vào ~/.claude/skills
+1. Sao chép link repo này: `https://github.com/trungbuu/video-minh-hoa-skills`
+2. Mở Claude Code (chọn model Opus 5.5) hoặc Codex (chọn model Sol 5.6).
+3. Dán tin nhắn sau và gửi:
+
+```
+Cài giúp tôi bộ skill ở https://github.com/trungbuu/video-minh-hoa-skills.
+Kiểm máy tôi còn thiếu phần mềm nào, hỏi tôi trước khi cài thêm, xong thì báo tôi dùng thế nào.
 ```
 
-Hoặc chép tay thư mục `skills/video-minh-hoa-doc` và `skills/video-minh-hoa-ngang` vào `~/.claude/skills/`.
+Claude hoặc Codex sẽ tự tải repo, chạy `install.sh` (Codex dùng `./install.sh codex`), kiểm Node.js, ffmpeg, Python và hỏi bạn trước khi cài phần còn thiếu. Cài xong, mở phiên mới để skill được nạp.
+
+Người quen dòng lệnh có thể tự chạy `git clone` rồi `./install.sh`, `./install.sh codex` hoặc `./install.sh all`.
 
 ## Cần có trên máy
 

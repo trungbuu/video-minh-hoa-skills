@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Video minh hoạ tài liệu</title>
+<title>Tài liệu thành video</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -85,6 +85,33 @@ td:first-child{font-weight:700}
 .note{background:var(--warn-soft);border-radius:12px;padding:14px 16px;font-size:15px}
 .foot{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;color:var(--faint);font-size:13.5px;display:grid;gap:6px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.say{background:var(--acc-soft);border-radius:12px 12px 12px 4px;padding:10px 14px;font-size:15px;color:var(--ink)}
+.say b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);margin-bottom:2px}
+.scene .say{margin-top:2px}
+.scene p b{color:var(--ink)}
+.btn.sm{padding:6px 12px;font-size:13.5px}
+.linkbox{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px;background:var(--sunk);border-radius:10px;padding:10px 12px}
+.linkbox code{background:none;padding:0;font-size:13.5px;white-space:normal;overflow-wrap:anywhere}
+.models{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+@media (max-width:620px){.models{grid-template-columns:1fr}}
+.model{border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:4px;background:var(--bg)}
+.model .tool{font-family:var(--mono);font-size:11.5px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.model b{font-size:22px;font-weight:800;color:var(--acc)}
+.model p{font-size:14px}
+.msg{position:relative;background:var(--acc-soft);border:1px solid var(--acc);border-radius:14px 14px 14px 4px;padding:14px 16px 14px;margin:10px 0 10px;font-size:15.5px;line-height:1.55}
+.msg .msg-t{display:block;padding-right:86px}
+.msg .cp{position:absolute;top:10px;right:10px;font-family:var(--sans);font-size:12.5px;font-weight:700;background:var(--acc);color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+details.more{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:4px 16px}
+details.more summary{cursor:pointer;font-weight:700;padding:10px 0}
+details.more .tbl{margin:4px 0 14px}
+.chat{display:grid;gap:10px;max-width:780px}
+.bub{max-width:88%;padding:11px 15px;border-radius:14px;font-size:15.5px;line-height:1.55}
+.bub b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.bub.u{justify-self:end;background:var(--acc);color:#fff;border-bottom-right-radius:4px}
+.bub.u b{color:rgba(255,255,255,.8)}
+.bub.c{justify-self:start;background:var(--panel);border:1px solid var(--line);border-bottom-left-radius:4px}
+.bub.c b{color:var(--acc)}
 </style>
 </head>
 <body>
@@ -93,13 +120,13 @@ td:first-child{font-weight:700}
 <div class="wrap">
 <header class="hero">
   <div>
-    <span class="eyebrow">Skill cho Claude Code · MIT · tiếng Việt</span>
-    <h1>Biến tài liệu thành video minh hoạ, khổ dọc hoặc ngang</h1>
-    <p class="lede">Hai skill đọc tài liệu của bạn, viết kịch bản, tạo giọng đọc tiếng Việt, phụ đề karaoke khớp từng từ, nhạc nền, dựng hình hoạt hình theo màu thương hiệu, tự soát lỗi rồi xuất video đạt chuẩn đăng mạng xã hội. Không dùng AI tạo video, không cần khoá API.</p>
+    <span class="eyebrow">Lazy Sharing</span>
+    <h1>Trực quan tài liệu thành video dành cho dân không chuyên</h1>
+    <p class="lede">Bạn đưa tài liệu, trả lời vài câu hỏi, còn Claude lo phần còn lại. Claude viết kịch bản, tạo giọng đọc tiếng Việt và phụ đề chạy theo từng chữ, dựng hình hoạt hình theo màu thương hiệu, tự soát lỗi rồi giao video khổ dọc hoặc ngang. Không cần biết code, không cần khoá API.</p>
     <div class="cta">
-      <a class="btn pri" href="https://github.com/trungbuu/video-minh-hoa-skills" target="_blank" rel="noopener">Mở repo trên GitHub</a>
-      <a class="btn" href="https://github.com/trungbuu/video-minh-hoa-skills/archive/refs/heads/main.zip" target="_blank" rel="noopener">Tải file ZIP</a>
-      <a class="btn" href="#cai-dat">Cài đặt trong 2 phút</a>
+      <a class="btn pri" href="https://github.com/trungbuu/video-minh-hoa-skills" target="_blank" rel="noopener">Mở bộ skill trên GitHub</a>
+      <button class="btn" type="button" data-copy="https://github.com/trungbuu/video-minh-hoa-skills">Sao chép link Git</button>
+      <a class="btn" href="#cai-dat">Cài trong 3 bước</a>
     </div>
   </div>
   <div class="demos">
@@ -109,156 +136,152 @@ td:first-child{font-weight:700}
 </header>
 
 <nav class="toc" aria-label="Mục lục">
-  <a href="#chon"><span class="n">01</span>Chọn skill</a>
+  <a href="#chon"><span class="n">01</span>Chọn khổ video</a>
   <a href="#cai-dat"><span class="n">02</span>Cài đặt</a>
-  <a href="#cach-lam"><span class="n">03</span>Cách làm</a>
-  <a href="#kich-ban"><span class="n">04</span>Viết kịch bản</a>
+  <a href="#cach-lam"><span class="n">03</span>Trò chuyện để làm video</a>
+  <a href="#kieu-canh"><span class="n">04</span>Sáu kiểu cảnh</a>
   <a href="#nhan-duoc"><span class="n">05</span>Điều nhận được</a>
-  <a href="#bo-sung"><span class="n">06</span>Cần bổ sung</a>
-  <a href="#loi"><span class="n">07</span>Lỗi hay gặp</a>
+  <a href="#bo-sung"><span class="n">06</span>Cần chuẩn bị</a>
+  <a href="#loi"><span class="n">07</span>Khi gặp trục trặc</a>
 </nav>
 
 <section id="chon">
-  <div class="sh"><h2>Chọn skill theo nơi đăng</h2><p>Hai skill dùng chung cách làm, chung sáu kiểu cảnh và chung bộ kiểm. Khác nhau ở khổ hình và bố cục. Cùng một kịch bản có thể dựng ra cả hai khổ.</p></div>
+  <div class="sh"><h2>Chọn khổ video theo nơi đăng</h2><p>Bộ skill có hai bản, cách dùng giống hệt nhau. Bạn chỉ cần nói với Claude là muốn video dọc hay ngang, hoặc nói nơi đăng để Claude tự chọn.</p></div>
   <div class="grid2">
     <div class="card"><span class="pill">video-minh-hoa-doc</span><h3>Khổ dọc 1080×1920</h3>
-      <p>Tiêu đề trên, hình giữa, phụ đề phía trên vùng nút của ứng dụng. Tự chừa vùng an toàn cho TikTok và Reels.</p>
-      <ul><li>TikTok, Reels, YouTube Shorts, Zalo</li><li>Mẹo ngắn, quy trình 3 bước, thông báo nội bộ</li><li>20 đến 90 giây</li></ul></div>
+      <p>Tiêu đề phía trên, hình ở giữa, phụ đề nằm trên vùng nút bấm của ứng dụng nên không bị che.</p>
+      <ul><li>TikTok, Reels, YouTube Shorts, Zalo</li><li>Mẹo ngắn, quy trình vài bước, thông báo nội bộ</li><li>Dài 20 đến 90 giây</li></ul>
+      <div class="say"><b>Bạn nói</b>Làm video dọc 45 giây để đăng Reels.</div></div>
     <div class="card"><span class="pill">video-minh-hoa-ngang</span><h3>Khổ ngang 1920×1080</h3>
-      <p>Chữ ở cột trái, hình minh hoạ ở khối bên phải, phụ đề dưới giữa khung. Nhịp chậm hơn, hợp nội dung dài.</p>
-      <ul><li>YouTube, buổi đào tạo, màn hình chiếu, website</li><li>Hướng dẫn, chính sách, báo cáo, bài giảng</li><li>30 đến 180 giây</li></ul></div>
+      <p>Chữ ở cột trái, hình minh hoạ bên phải, phụ đề phía dưới. Nhịp chậm hơn, hợp nội dung dài.</p>
+      <ul><li>YouTube, buổi đào tạo, màn hình chiếu, website</li><li>Hướng dẫn, chính sách, báo cáo, bài giảng</li><li>Dài 30 đến 180 giây</li></ul>
+      <div class="say"><b>Bạn nói</b>Làm video ngang 2 phút để chiếu trong buổi đào tạo.</div></div>
   </div>
 </section>
 
 <section id="cai-dat">
-  <div class="sh"><h2>Cài đặt</h2><p>Tải repo về, chạy script cài đặt, script chép hai skill vào thư mục skill của Claude Code và báo phần mềm nào còn thiếu.</p></div>
-  <div class="grid2">
-    <div class="card"><h3>1. Tải và cài skill</h3>
-<div class="cmd"><button class="cp" type="button">Sao chép</button>git clone https://github.com/trungbuu/video-minh-hoa-skills.git
-cd video-minh-hoa-skills
-./install.sh</div>
-      <p>Không dùng git thì bấm “Tải file ZIP”, giải nén rồi chép hai thư mục trong <code>skills/</code> vào <code>~/.claude/skills/</code>.</p></div>
-    <div class="card"><h3>2. Cài phần mềm nền</h3>
-<div class="cmd"><button class="cp" type="button">Sao chép</button><span class="c"># macOS</span>
-brew install node ffmpeg
-pip install numpy pillow playwright gTTS openai-whisper
-<span class="c"># Windows</span>
-winget install OpenJS.NodeJS Gyan.FFmpeg
-pip install numpy pillow playwright gTTS openai-whisper</div>
-      <p>gTTS và openai-whisper không bắt buộc. Thiếu gTTS thì dùng giọng macOS. Thiếu whisper thì căn lời theo năng lượng, kém chính xác hơn một chút.</p></div>
+  <div class="sh"><h2>Cài đặt trong 3 bước, không cần gõ lệnh</h2><p>Bạn chỉ sao chép link Git và dán một tin nhắn. Claude Code hoặc Codex sẽ tự tải, tự cài và hỏi bạn trước khi cài thêm phần mềm nào vào máy.</p></div>
+  <div class="steps">
+    <div class="step"><span class="num">1</span><div><h3>Sao chép link Git</h3><p>Bấm nút bên dưới để sao chép địa chỉ bộ skill.</p>
+      <div class="linkbox"><code>https://github.com/trungbuu/video-minh-hoa-skills</code><button class="btn sm" type="button" data-copy="https://github.com/trungbuu/video-minh-hoa-skills">Sao chép</button></div></div></div>
+    <div class="step"><span class="num">2</span><div><h3>Mở Claude Code hoặc Codex và chọn model</h3><p>Làm video là việc nhiều bước, nên chọn model mạnh nhất để Claude tự làm trọn từ đầu đến cuối.</p>
+      <div class="models">
+        <div class="model"><span class="tool">Claude Code</span><b>Opus 5.5</b><p>Trong ứng dụng Claude, chọn model ở ô chọn model phía dưới khung chat.</p></div>
+        <div class="model"><span class="tool">Codex</span><b>Sol 5.6</b><p>Trong Codex, chọn model ở phần cài đặt model trước khi bắt đầu phiên.</p></div>
+      </div></div></div>
+    <div class="step"><span class="num">3</span><div><h3>Dán tin nhắn này và gửi</h3>
+      <div class="msg"><button class="cp" type="button">Sao chép</button><span class="msg-t">Cài giúp tôi bộ skill ở https://github.com/trungbuu/video-minh-hoa-skills. Kiểm máy tôi còn thiếu phần mềm nào, hỏi tôi trước khi cài thêm, xong thì báo tôi dùng thế nào.</span></div>
+      <p>Claude sẽ trả lời kiểu như “Máy bạn còn thiếu ffmpeg, bạn có muốn mình cài không?”. Bạn chỉ cần đồng ý. Cài xong, mở một phiên mới để skill được nạp.</p></div></div>
   </div>
-  <div class="tbl" style="margin-top:14px"><table>
+  <details class="more"><summary>Máy cần những gì (Claude sẽ tự kiểm giúp bạn)</summary>
+  <div class="tbl"><table>
     <thead><tr><th>Thành phần</th><th>Bắt buộc</th><th>Dùng để</th></tr></thead>
     <tbody>
-      <tr><td>Claude Code</td><td>có</td><td>chạy skill, viết kịch bản, điều phối các bước</td></tr>
-      <tr><td>Node.js 18+</td><td>có</td><td>chạy HyperFrames qua npx để render, tự tải Chrome headless lần đầu</td></tr>
-      <tr><td>ffmpeg, ffprobe</td><td>có</td><td>xử lý âm thanh, ghép video, đo độ lớn tiếng</td></tr>
-      <tr><td>Python 3.9+ với numpy, Pillow, playwright</td><td>có</td><td>tạo nhạc, mix, tự soát khung hình</td></tr>
+      <tr><td>Node.js 18+</td><td>có</td><td>dựng và xuất video</td></tr>
+      <tr><td>ffmpeg</td><td>có</td><td>xử lý âm thanh, ghép video</td></tr>
+      <tr><td>Python 3.9+ và vài gói</td><td>có</td><td>tạo nhạc, trộn âm, tự soát</td></tr>
       <tr><td>gTTS</td><td>nên có</td><td>giọng đọc tiếng Việt miễn phí, cần mạng</td></tr>
-      <tr><td>openai-whisper, model base</td><td>nên có</td><td>căn lời theo từng từ cho phụ đề karaoke</td></tr>
+      <tr><td>whisper</td><td>nên có</td><td>phụ đề chạy khớp từng chữ</td></tr>
     </tbody>
-  </table></div>
+  </table></div></details>
 </section>
 
 <section id="cach-lam">
-  <div class="sh"><h2>Cách làm, 6 bước</h2><p>Bạn chỉ làm ở bước 1, 2 và 6. Claude làm phần còn lại và chỉ giao video khi mọi chỉ số đều đạt.</p></div>
-  <div class="steps">
-    <div class="step"><span class="num">1</span><div><h3>Đưa tài liệu <span class="who u">bạn</span></h3><p>Đặt file vào thư mục làm việc và gõ yêu cầu, ví dụ “Làm video dọc 45 giây minh hoạ quy-trinh-hoan-tien.md cho nhân viên mới”. Tài liệu có thể là markdown, PDF, Word đã lưu thành văn bản, hoặc nội dung dán thẳng.</p></div></div>
-    <div class="step"><span class="num">2</span><div><h3>Trả lời bốn câu và duyệt kế hoạch <span class="who u">bạn</span></h3><p>Video để làm gì, ai xem, đăng ở đâu, xem xong người xem nên làm gì. Claude đề xuất thông điệp chính, số cảnh, độ dài và lời mời cuối, rồi chờ bạn đồng ý.</p></div></div>
-    <div class="step"><span class="num">3</span><div><h3>Tạo dự án và gắn thương hiệu <span class="who c">Claude</span></h3><p>Tạo thư mục dự án từ template, áp màu, phông và logo nếu bạn có. Không có thì dùng màu trung tính có sẵn.</p></div></div>
-    <div class="step"><span class="num">4</span><div><h3>Viết kịch bản và kiểm trước <span class="who c">Claude</span></h3><p>Viết <code>script.json</code> với các cảnh và dòng lời, rồi chạy bộ kiểm độ dài chữ, neo và thời lượng ước tính trước khi tốn thời gian tạo giọng.</p></div></div>
-    <div class="step"><span class="num">5</span><div><h3>Dựng, tự soát, nghiệm thu <span class="who m">tự động</span></h3><p>Tạo giọng, căn lời, nhạc và âm thanh nhấn, dựng hình, tự soát khung hình, render, xuất phụ đề và chạy cổng nghiệm thu. Video 30 giây mất vài phút, phần lớn cho bước tạo giọng và render.</p></div></div>
-    <div class="step"><span class="num">6</span><div><h3>Xem và yêu cầu chỉnh <span class="who u">bạn</span></h3><p>Xem video và tấm ghép khung hình. Muốn sửa câu chữ, màu hay độ dài thì nói thẳng, Claude chạy lại đúng bước cần thiết.</p></div></div>
+  <div class="sh"><h2>Trò chuyện để làm video</h2><p>Mọi việc diễn ra như một cuộc trò chuyện. Bạn đưa tài liệu và trả lời câu hỏi; Claude đề xuất, chờ bạn đồng ý rồi mới làm. Dưới đây là một cuộc trò chuyện mẫu.</p></div>
+  <div class="chat">
+    <div class="bub u"><b>Bạn</b>Làm video dọc 45 giây minh hoạ tài liệu quy-trinh-hoan-tien.md cho nhân viên mới.</div>
+    <div class="bub c"><b>Claude</b>Mình đã đọc tài liệu. Trước khi làm, cho mình hỏi bốn câu nhé. Video để làm gì, ai xem, đăng ở đâu và xem xong họ nên làm gì?</div>
+    <div class="bub u"><b>Bạn</b>Để đào tạo, nhân viên chăm sóc khách xem trong nhóm Zalo, xem xong biết xử lý hoàn tiền đúng 3 bước.</div>
+    <div class="bub c"><b>Claude</b>Mình đề xuất 6 cảnh, khoảng 45 giây. Mở bằng câu hỏi “Khách đòi hoàn tiền, bạn làm gì trước?”, rồi 3 bước, một con số về thời hạn, một câu đố tình huống và thẻ kết. Bạn đồng ý không?</div>
+    <div class="bub u"><b>Bạn</b>Đồng ý, dùng màu xanh của công ty, logo mình gửi kèm.</div>
+    <div class="bub c"><b>Claude</b>Xong rồi. Video 46 giây, đã tự soát 0 lỗi, âm lượng đạt chuẩn. Có bản có giọng, bản không lời, bản nhẹ để đăng và file phụ đề.</div>
+    <div class="bub u"><b>Bạn</b>Đổi câu mở đầu cho gắt hơn và rút còn 30 giây.</div>
+    <div class="bub c"><b>Claude</b>Mình sửa câu mở đầu, gộp hai cảnh giữa và dựng lại, chỉ chạy lại những bước cần thiết.</div>
+  </div>
+  <div class="grid3" style="margin-top:16px">
+    <div class="card"><span class="pill">bạn làm</span><h3>Đưa tài liệu, trả lời, duyệt</h3><p>Ba việc duy nhất của bạn là đưa tài liệu, trả lời bốn câu hỏi, nói đồng ý hoặc muốn sửa gì.</p></div>
+    <div class="card"><span class="pill">Claude làm</span><h3>Kịch bản, giọng, hình, nhạc</h3><p>Claude viết kịch bản, tạo giọng đọc, dựng hình và phụ đề, chọn nhạc nền và âm thanh nhấn.</p></div>
+    <div class="card"><span class="pill">tự động</span><h3>Tự soát và nghiệm thu</h3><p>Trước khi giao, video được kiểm chữ tràn, chữ bị che, âm lượng, khung đen. Không đạt thì Claude tự sửa.</p></div>
   </div>
 </section>
 
-<section id="kich-ban">
-  <div class="sh"><h2>Sáu kiểu cảnh có sẵn</h2><p>Mọi video ghép từ sáu kiểu cảnh này, khai trong <code>script.json</code>. Bạn không cần tự viết, nhưng biết các kiểu cảnh giúp bạn yêu cầu đúng ý. Chi tiết đầy đủ ở <code>references/kich-ban.md</code> trong mỗi skill.</p></div>
+<section id="kieu-canh">
+  <div class="sh"><h2>Sáu kiểu cảnh, bạn chỉ cần nói ý</h2><p>Mỗi video ghép từ sáu kiểu cảnh có sẵn. Bạn không cần nhớ tên, chỉ cần nói điều muốn thể hiện; Claude tự chọn kiểu cảnh hợp nhất. Mỗi thẻ dưới đây là một câu bạn có thể nói và điều Claude sẽ dựng.</p></div>
   <div class="scenes">
-    <div class="scene"><code class="t">hook</code><p>Mở đầu bằng câu hỏi hoặc nỗi đau, nhân vật cầm bảng, bong bóng dấu hỏi.</p><pre>{ "type": "hook",
-  "headline": "Họp mãi mà\nkhông [ra việc]?" }</pre></div>
-    <div class="scene"><code class="t">list</code><p>Liệt kê 2 đến 5 bước hoặc thành phần, hiện lần lượt theo nhịp nhạc.</p><pre>{ "type": "list",
-  "items": [["1","Chốt mục tiêu"],
-            ["2","Giới hạn giờ"]] }</pre></div>
-    <div class="scene"><code class="t">point</code><p>Một ý có nhân vật, đạo cụ và tối đa 3 chip từ khoá.</p><pre>{ "type": "point", "prop": "clipboard",
-  "chips": ["Viết một câu"] }</pre></div>
-    <div class="scene"><code class="t">quiz</code><p>Hỏi và đáp theo tình huống, dải đáp án hiện đúng lúc giọng đọc trả lời.</p><pre>{ "type": "quiz", "answer": {
-  "text": "Mỗi việc một người",
-  "at": {"line": 6, "word": "mỗi"} } }</pre></div>
-    <div class="scene"><code class="t">stat</code><p>Một con số lớn đếm lên, số phải có trong tài liệu.</p><pre>{ "type": "stat", "value": 15,
-  "unit": "′", "label": "phút là đủ" }</pre></div>
-    <div class="scene"><code class="t">cta</code><p>Thẻ kết có logo, tiêu đề và các dòng liên hệ.</p><pre>"cta": { "headline": "Họp ngắn,\n[ra việc]",
-  "rows": [["Mẫu", "Thư mục chung"]] }</pre></div>
+    <div class="scene"><span class="pill">Câu mở đầu</span><div class="say"><b>Bạn nói</b>Mở đầu bằng một câu hỏi làm người xem thấy mình trong đó.</div><p><b>Claude dựng</b> nhân vật cầm bảng, bong bóng dấu hỏi, câu hỏi lớn ngay giây đầu.</p></div>
+    <div class="scene"><span class="pill">Danh sách</span><div class="say"><b>Bạn nói</b>Liệt kê 3 bước chính trong quy trình.</div><p><b>Claude dựng</b> các dòng đánh số hiện lần lượt theo nhịp nhạc, tối đa 5 dòng.</p></div>
+    <div class="scene"><span class="pill">Một ý có minh hoạ</span><div class="say"><b>Bạn nói</b>Nhấn mạnh bước 1, kèm vài từ khoá.</div><p><b>Claude dựng</b> nhân vật làm động tác, một đạo cụ như bảng ghi chú hay bóng đèn, tối đa 3 từ khoá bật lên đúng lúc được đọc.</p></div>
+    <div class="scene"><span class="pill">Hỏi và đáp</span><div class="say"><b>Bạn nói</b>Làm một câu đố tình huống rồi đưa đáp án.</div><p><b>Claude dựng</b> hai nhân vật, dấu hỏi, dải đáp án hiện đúng lúc giọng đọc trả lời.</p></div>
+    <div class="scene"><span class="pill">Con số</span><div class="say"><b>Bạn nói</b>Làm nổi con số 7 ngày trong tài liệu.</div><p><b>Claude dựng</b> con số lớn đếm lên kèm nhãn ngắn. Số phải có trong tài liệu của bạn.</p></div>
+    <div class="scene"><span class="pill">Thẻ kết</span><div class="say"><b>Bạn nói</b>Kết bằng logo và số hotline để khách gọi.</div><p><b>Claude dựng</b> thẻ kết có logo, tiêu đề và các dòng liên hệ, giữ đủ lâu để chụp màn hình.</p></div>
   </div>
 </section>
 
 <section id="nhan-duoc">
-  <div class="sh"><h2>Điều nhận được</h2><p>Mỗi video giao kèm bốn file và một tấm ghép để duyệt nhanh. Cổng nghiệm thu đo bằng số, video chỉ tới tay bạn khi mọi mục đều đạt.</p></div>
+  <div class="sh"><h2>Điều nhận được</h2><p>Mỗi lần làm, bạn nhận bốn file và một tấm ảnh duyệt nhanh. Claude chỉ giao khi mọi chỉ số đều đạt và sẽ báo cho bạn con số đo được.</p></div>
   <div class="grid2">
     <div class="tbl"><table>
-      <thead><tr><th>File trong renders/</th><th>Dùng khi</th></tr></thead>
+      <thead><tr><th>File</th><th>Dùng khi</th></tr></thead>
       <tbody>
-        <tr><td>…_giong-doc.mp4</td><td>bản gốc có giọng đọc, chất lượng cao</td></tr>
-        <tr><td>…_social.mp4</td><td>đăng mạng xã hội, dung lượng khoảng 4 MB cho 30 giây</td></tr>
-        <tr><td>…_khong-loi.mp4</td><td>lồng giọng người thật hoặc chỉ cần nhạc</td></tr>
-        <tr><td>….srt</td><td>tải phụ đề lên YouTube, Facebook</td></tr>
+        <tr><td>Bản có giọng</td><td>đăng hoặc chiếu có tiếng, chất lượng cao</td></tr>
+        <tr><td>Bản nhẹ để đăng</td><td>tải lên mạng xã hội, khoảng 4 MB cho 30 giây</td></tr>
+        <tr><td>Bản không lời</td><td>lồng giọng người thật hoặc chỉ cần nhạc</td></tr>
+        <tr><td>File phụ đề</td><td>tải lên YouTube, Facebook</td></tr>
       </tbody>
     </table></div>
     <div class="tbl"><table>
-      <thead><tr><th>Chuẩn nghiệm thu</th><th>Mức</th></tr></thead>
+      <thead><tr><th>Được kiểm</th><th>Mức đạt</th></tr></thead>
       <tbody>
-        <tr><td>Độ lớn tiếng</td><td>-14 LUFS ± 1, chuẩn mạng xã hội</td></tr>
-        <tr><td>Đỉnh thật</td><td>từ -1 dBTP trở xuống</td></tr>
-        <tr><td>Nhạc so với lời</td><td>thấp hơn 4 đến 6 dB khi đang nói</td></tr>
-        <tr><td>Hình</td><td>đúng khổ, 30 fps, không khung đen</td></tr>
-        <tr><td>Tự soát chữ</td><td>0 lỗi tràn, đè, lọt vùng an toàn, ngắt từ ghép</td></tr>
+        <tr><td>Âm lượng</td><td>chuẩn mạng xã hội, không to không nhỏ hơn video khác</td></tr>
+        <tr><td>Nhạc và giọng</td><td>nhạc nhỏ hơn giọng khi đang nói, nghe rõ lời</td></tr>
+        <tr><td>Hình</td><td>đúng khổ, mượt, không có khung đen</td></tr>
+        <tr><td>Chữ</td><td>không tràn, không bị che, không ngắt đôi từ tiếng Việt</td></tr>
       </tbody>
     </table></div>
   </div>
-  <div class="card" style="margin-top:14px"><h3>Tấm ghép tự soát</h3><p>Mỗi ô là một khoảnh khắc quan trọng, ô có lỗi viền đỏ. Dải dưới là dạng sóng âm thanh, vạch đỏ là âm thanh nhấn, vạch xanh là đầu mỗi câu phụ đề.</p>
-    <img class="shot" src="media/tu-soat-ngang.jpg" alt="Tấm ghép tự soát của video mẫu khổ ngang" loading="lazy"></div>
+  <div class="card" style="margin-top:14px"><h3>Tấm ảnh duyệt nhanh</h3><p>Mỗi ô là một khoảnh khắc quan trọng của video, ô có lỗi sẽ viền đỏ. Bạn nhìn một lượt là biết video có ổn không, không cần tua từng giây.</p>
+    <img class="shot" src="media/tu-soat-ngang.jpg" alt="Tấm ảnh duyệt nhanh của video mẫu khổ ngang" loading="lazy"></div>
 </section>
 
 <section id="bo-sung">
-  <div class="sh"><h2>Điều cần bổ sung</h2><p>Skill lo phần dựng. Những thứ dưới đây phải do bạn chuẩn bị, vì chúng quyết định video đúng thông điệp và đúng thương hiệu.</p></div>
+  <div class="sh"><h2>Cần chuẩn bị gì</h2><p>Bộ skill lo phần dựng. Những thứ dưới đây do bạn chuẩn bị, vì chúng quyết định video nói đúng và nhìn đúng thương hiệu.</p></div>
   <div class="grid2">
     <div class="card check"><h3>Bạn chuẩn bị</h3><ul>
-      <li><span>Tài liệu nguồn chứa mọi con số và nhận định muốn đưa vào video</span></li>
-      <li><span>Mục đích video, người xem và nơi đăng</span></li>
-      <li><span>Một lời mời cuối video kèm thông tin liên hệ đã kiểm</span></li>
-      <li><span>Logo PNG nền trong, bản đầy đủ và bản dấu</span></li>
-      <li><span>Màu thương hiệu và tên phông, phông phải có dấu tiếng Việt</span></li>
-      <li><span>Đồng ý bằng văn bản nếu dùng tên, lời chứng thực của người thật</span></li>
+      <li><span>Tài liệu có đủ mọi con số và thông tin muốn đưa vào video</span></li>
+      <li><span>Câu trả lời cho bốn câu hỏi về mục đích, người xem, nơi đăng và việc cần làm sau khi xem</span></li>
+      <li><span>Thông tin liên hệ cuối video đã kiểm đúng</span></li>
+      <li><span>Logo dạng PNG nền trong suốt</span></li>
+      <li><span>Màu thương hiệu, phông chữ có dấu tiếng Việt nếu có</span></li>
+      <li><span>Sự đồng ý nếu dùng tên hay lời của người thật</span></li>
     </ul></div>
-    <div class="card"><h3>Giới hạn hiện tại</h3><ul>
-      <li>Giọng gTTS còn máy móc. Muốn giọng tự nhiên, có thể bật OpenAI hoặc Gemini TTS với khoá API của bạn, có tính phí.</li>
-      <li>Nhạc nền là bản tổng hợp giữ chỗ. Nên thay bằng nhạc có bản quyền qua mục <code>audio.music</code>.</li>
-      <li>Hình là nhân vật người que và đạo cụ vẽ sẵn, chưa có ảnh sản phẩm hay cảnh quay thật.</li>
-      <li>Chưa có khổ vuông 1:1 và 4:5.</li>
-      <li>Nội dung phụ đề, giọng đọc tối ưu cho tiếng Việt.</li>
+    <div class="card"><h3>Những điều nên biết</h3><ul>
+      <li>Giọng đọc miễn phí còn hơi máy móc. Muốn giọng tự nhiên hơn, bạn có thể nói Claude dùng dịch vụ giọng đọc trả phí.</li>
+      <li>Nhạc nền là bản tạm. Có nhạc bản quyền thì gửi Claude để thay.</li>
+      <li>Hình là nhân vật hoạt hình vẽ sẵn, chưa dùng được ảnh sản phẩm hay cảnh quay thật.</li>
+      <li>Hiện có khổ dọc và ngang, chưa có khổ vuông.</li>
     </ul></div>
   </div>
-  <p class="note" style="margin-top:14px">Để video chuyển đổi tốt hơn, mỗi video chỉ nên có một thông điệp, câu mở đầu nói thẳng nỗi đau của người xem và chỉ một lời mời ở cuối. Nếu dùng cho quảng cáo, nhờ Claude xuất thêm 2 đến 3 câu mở đầu khác nhau để thử.</p>
+  <p class="note" style="margin-top:14px">Để video hiệu quả hơn, mỗi video chỉ nên có một thông điệp, câu mở đầu nói thẳng điều người xem đang gặp và chỉ một lời mời ở cuối. Nếu chạy quảng cáo, hãy nhờ Claude làm thêm 2 đến 3 câu mở đầu khác nhau để thử.</p>
 </section>
 
 <section id="loi">
-  <div class="sh"><h2>Lỗi hay gặp</h2></div>
+  <div class="sh"><h2>Khi gặp trục trặc, cứ nói với Claude</h2><p>Bạn không cần tự sửa. Mô tả điều bạn thấy, Claude sẽ tìm nguyên nhân và làm lại đúng phần cần làm.</p></div>
   <div class="tbl"><table>
-    <thead><tr><th>Hiện tượng</th><th>Cách xử lý</th></tr></thead>
+    <thead><tr><th>Bạn thấy</th><th>Bạn nói với Claude</th></tr></thead>
     <tbody>
-      <tr><td>Báo thiếu ffprobe khi render</td><td>cài ffmpeg bản đầy đủ; trong lúc chờ skill tự dùng bộ render dự phòng, chậm hơn</td></tr>
-      <tr><td>Chữ tiếng Việt lỗi dấu khi dán vào dòng lệnh</td><td>đưa nội dung vào file, không dán tiếng Việt thẳng vào terminal trên Windows</td></tr>
-      <tr><td>Video dài hoặc ngắn hơn mong muốn</td><td>nói “rút còn 45 giây”, bộ kiểm ước tính độ dài trước khi dựng lại</td></tr>
-      <tr><td>Máy đọc sai tên tiếng Anh hoặc số điện thoại</td><td>Claude thêm cách đọc riêng cho dòng đó, phụ đề vẫn giữ nguyên</td></tr>
-      <tr><td>Hình hoặc âm thanh nhấn lệch lời</td><td>hình và âm thanh neo theo từ; kiểm từ neo có đúng nguyên văn trong phụ đề không</td></tr>
-      <tr><td>Chữ bị ô đỏ trong tấm tự soát</td><td>rút ngắn tiêu đề hoặc chip; không thu nhỏ chữ</td></tr>
+      <tr><td>Video dài hoặc ngắn hơn ý muốn</td><td>“Rút còn 30 giây” hoặc “kéo dài thành 1 phút”</td></tr>
+      <tr><td>Máy đọc sai tên riêng hoặc số điện thoại</td><td>“Đọc tên này theo tiếng Anh” hoặc “đọc số theo từng cụm”</td></tr>
+      <tr><td>Câu chữ chưa đúng giọng công ty</td><td>“Viết lại câu mở đầu thân thiện hơn, xưng anh chị”</td></tr>
+      <tr><td>Màu hoặc logo chưa đúng</td><td>“Dùng màu xanh đậm này và logo trong file đính kèm”</td></tr>
+      <tr><td>Hình không khớp lúc đọc</td><td>“Cho con số hiện đúng lúc đọc tới chữ bảy ngày”</td></tr>
+      <tr><td>Báo lỗi thiếu phần mềm</td><td>“Cài giúp tôi phần còn thiếu”, Claude sẽ hỏi trước khi cài</td></tr>
     </tbody>
   </table></div>
 </section>
 
 <footer class="foot">
-  <p>Repo github.com/trungbuu/video-minh-hoa-skills, mã nguồn MIT. Phông Be Vietnam Pro theo SIL Open Font License 1.1. HyperFrames (Apache-2.0), GSAP, whisper và gTTS được tải khi chạy, không nằm trong repo.</p>
-  <p>Video mẫu dùng nội dung minh hoạ “họp 15 phút”, giọng gTTS và nhạc tổng hợp.</p>
+  <p>Lazy Sharing · Bộ skill ở github.com/trungbuu/video-minh-hoa-skills, mã nguồn MIT. Phông Be Vietnam Pro theo SIL Open Font License 1.1.</p>
+  <p>Video mẫu dùng nội dung minh hoạ “họp 15 phút”, giọng đọc miễn phí và nhạc tổng hợp.</p>
 </footer>
 </div>
 
@@ -412,28 +435,27 @@ pip install numpy pillow playwright gTTS openai-whisper</div>
 </script>
 <script>
 (function(){
-  document.querySelectorAll(".cmd .cp").forEach(function(b){
-    b.addEventListener("click",function(){
-      var box=b.parentElement, t=box.innerText.replace(/^Sao chép\s*/,"").replace(/^Đã chép\s*/,"").trim();
-      var done=function(){ b.textContent="Đã chép"; setTimeout(function(){ b.textContent="Sao chép"; },1500); };
-      try{ navigator.clipboard.writeText(t).then(done,function(){ sel(box); }); }catch(e){ sel(box); }
-    });
-  });
   function sel(el){ var r=document.createRange(); r.selectNodeContents(el); var s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+  function copy(text, btn, box){
+    var old=btn.textContent, done=function(){ btn.textContent="Đã chép"; setTimeout(function(){ btn.textContent=old; },1500); };
+    try{ navigator.clipboard.writeText(text).then(done,function(){ if(box) sel(box); }); }catch(e){ if(box) sel(box); }
+  }
+  document.querySelectorAll("[data-copy]").forEach(function(b){ b.addEventListener("click",function(){ copy(b.getAttribute("data-copy"), b, null); }); });
+  document.querySelectorAll(".msg .cp").forEach(function(b){ b.addEventListener("click",function(){ var t=b.parentElement.querySelector(".msg-t"); copy(t.textContent.replace(/[\u00A0\u2060]/g,function(c){return c==="\u00A0"?" ":"";}), b, t); }); });
   function noWidow(root){
-    root.querySelectorAll("p,li span,li,td,th,h2,h3,figcaption").forEach(function(el){
+    root.querySelectorAll("p,li span,li,td,th,h2,h3,figcaption,.say,.bub,.msg-t,summary").forEach(function(el){
       var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),last=null,n;
       while((n=w.nextNode())) if(n.nodeValue.trim()) last=n;
       if(!last||last.parentElement.closest("pre,.cmd,code")) return;
       var v=last.nodeValue,m=v.match(/ (\S{1,14})\s*$/);
-      if(m){var i=v.lastIndexOf(" "+m[1]);last.nodeValue=v.slice(0,i)+" "+v.slice(i+1);}
+      if(m){var i=v.lastIndexOf(" "+m[1]);last.nodeValue=v.slice(0,i)+"\u00A0"+v.slice(i+1);}
     });
     var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),t;
-    while((t=w.nextNode())){ if(t.parentElement&&t.parentElement.closest("pre,.cmd,code")) continue;
-      var v=t.nodeValue,nv=v.replace(/([A-Za-z0-9_.<>~])([-\/])(?!⁠)(?=[A-Za-z0-9_.<>*])/g,"$1$2⁠");
+    while((t=w.nextNode())){ if(t.parentElement&&t.parentElement.closest("pre,.cmd,code,.msg-t")) continue;
+      var v=t.nodeValue,nv=v.replace(/([A-Za-z0-9_.<>~])([-\/])(?!\u2060)(?=[A-Za-z0-9_.<>*])/g,"$1$2\u2060");
       if(nv!==v) t.nodeValue=nv; }
   }
-  function run(){ if(window.viType) window.viType.bind(document.body); noWidow(document.body); }
+  function run(){ var root=document.querySelector(".vmh")||document.body; if(window.viType) window.viType.bind(root); noWidow(root); }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run); else run();
 })();
 </script>
