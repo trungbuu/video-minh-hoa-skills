@@ -1,0 +1,34 @@
+{
+  "_ghichu": "Kịch bản mẫu của template story. Sửa mục meta, scenes và lines rồi chạy scripts/pipeline.py. sub là phụ đề, dấu _ nối từ ghép; tts là các đoạn [ngôn ngữ, chữ] cho gtts và say; say là câu cho openai hoặc gemini.",
+  "meta": {
+    "brand": "Nhóm vận hành",
+    "letters": "",
+    "cta": { "kicker": "Áp dụng từ tuần này", "headline": "Họp ngắn,\n[ra việc]", "rows": [["Mẫu biên bản", "Thư mục chung"]] }
+  },
+  "bpm": 120,
+  "hold": 2.5,
+  "voiceStyle": "Giọng nữ trẻ, ấm, tự tin, nhịp tự nhiên.",
+  "scenes": [
+    { "type": "hook", "min": 4, "kicker": "Mẹo làm việc", "headline": "Họp mãi mà\nkhông [ra việc]?", "wm": "?" },
+    { "type": "list", "min": 5, "kicker": "3 bước", "headline": "Họp [15 phút]", "items": [["1", "Chốt mục tiêu"], ["2", "Giới hạn giờ"], ["3", "Giao người làm"]], "wm": "3" },
+    { "type": "point", "min": 5, "kicker": "Bước 1", "headline": "Chốt [mục_tiêu]", "sub": "Một câu, trước khi mời họp", "prop": "clipboard", "pose": "hold", "chips": ["Viết một câu", "Gửi trước"], "wm": "1" },
+    { "type": "stat", "min": 4.5, "kicker": "Bước 2", "headline": "Giới hạn [giờ]", "value": 15, "unit": "′", "label": "phút là đủ", "countAt": { "line": 4, "word": "mười" }, "wm": "2" },
+    { "type": "quiz", "min": 5, "kicker": "Bước 3", "headline": "Ai làm [việc gì]?", "answer": { "text": "Mỗi việc một người", "at": { "line": 6, "word": "mỗi" } }, "wm": "3" },
+    { "type": "cta", "min": 4 }
+  ],
+  "lines": [
+    { "scene": 0, "sub": "Họp cả buổi mà không ra việc?" },
+    { "scene": 1, "sub": "Thử ba bước họp mười lăm phút" },
+    { "scene": 2, "sub": "Một, chốt mục_tiêu bằng một câu" },
+    { "scene": 2, "sub": "và gửi trước cho mọi người" },
+    { "scene": 3, "sub": "Hai, giới_hạn mười lăm phút, hết giờ là dừng" },
+    { "scene": 4, "sub": "Ba, ai làm việc gì?" },
+    { "scene": 4, "sub": "Mỗi việc một người, có hạn chót" },
+    { "scene": 5, "sub": "Họp ngắn, ra việc. Áp_dụng ngay tuần này" }
+  ],
+  "cues": [
+    { "line": 1, "word": "ba", "sfx": "pop" },
+    { "line": 4, "word": "mười", "sfx": "ding" },
+    { "line": 6, "word": "mỗi", "sfx": "pop" }
+  ]
+}

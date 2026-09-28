@@ -1,0 +1,8 @@
+{
+  "name": "video-minh-hoa-skills",
+  "version": "1.0.0",
+  "description": "Hai skill biến tài liệu thành video hoạt hình có giọng đọc và phụ đề tiếng Việt, khổ dọc 9:16 và khổ ngang 16:9.",
+  "author": { "name": "Trung Nguyen" },
+  "license": "MIT",
+  "skills": ["./skills/video-minh-hoa-doc", "./skills/video-minh-hoa-ngang"]
+}

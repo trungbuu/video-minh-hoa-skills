@@ -1,0 +1,10 @@
+/* Nhận diện thương hiệu. Chỉ sửa file này để đổi màu, phông và logo (assets/logo.png, assets/mark.png).
+   Phông phải có bộ ký tự tiếng Việt; tải bằng: python3 tools/get_fonts.py "Tên phông:700,800" "Phông nội dung:500,600"
+   Phông chỉ có một độ đậm thì đặt --w-head: 400. */
+:root {
+  --bg: #FFFFFF; --accent: #1F6FEB; --accent-2: #4FA3FF; --ink: #475061; --ink-2: #1D2430;
+  --decor: #E1E5EC; --card: #F3F5F8; --wm: #F1F3F6; --nature: #6E8B5B; --nature-soft: #E3EADB;
+  --skin: #F4D3BC; --skin-2: #E8BC9A; --hair: #2B2522;
+  --grad: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  --f-head: "Be Vietnam Pro"; --f-body: "Be Vietnam Pro"; --w-head: 800;
+}

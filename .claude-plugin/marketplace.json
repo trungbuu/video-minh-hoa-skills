@@ -1,0 +1,5 @@
+{
+  "name": "video-minh-hoa-skills",
+  "owner": { "name": "Trung Nguyen" },
+  "plugins": [ { "name": "video-minh-hoa-skills", "source": "./", "description": "Video minh hoạ tài liệu, khổ dọc và ngang", "version": "1.0.0" } ]
+}

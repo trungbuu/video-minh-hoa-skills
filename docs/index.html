@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Video minh hoạ tài liệu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#F4F5F7; --panel:#FFFFFF; --sunk:#E8EBF0; --ink:#141922; --mute:#525B6B; --faint:#8791A1; --line:#D8DDE5;
+  --acc:#1F6FEB; --acc2:#4FA3FF; --acc-soft:#DCE8FD; --ok:#15803D; --ok-soft:#DCF1E3; --warn:#A16207; --warn-soft:#FBEFCF; --code:#0F172A; --code-ink:#E2E8F0;
+  --sans:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --bg:#0F1318; --panel:#171C23; --sunk:#212834; --ink:#E8ECF2; --mute:#A5AEBD; --faint:#76808F; --line:#2B3340;
+  --acc:#6EA8FF; --acc2:#8EC2FF; --acc-soft:#1B2A45; --ok:#5BD08A; --ok-soft:#15301F; --warn:#EDC15A; --warn-soft:#33290F; --code:#0A0E14; --code-ink:#DCE3EE;}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0F1318; --panel:#171C23; --sunk:#212834; --ink:#E8ECF2; --mute:#A5AEBD; --faint:#76808F; --line:#2B3340;
+  --acc:#6EA8FF; --acc2:#8EC2FF; --acc-soft:#1B2A45; --ok:#5BD08A; --ok-soft:#15301F; --warn:#EDC15A; --warn-soft:#33290F; --code:#0A0E14; --code-ink:#DCE3EE;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;hyphens:none;word-break:normal;overflow-wrap:normal}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:16px;padding-block:28px 72px}
+h1,h2,h3{margin:0;line-height:1.15;text-wrap:balance}
+p,li{text-wrap:pretty}
+p{margin:0}
+a{color:var(--acc)}
+code{font-family:var(--mono);font-size:.86em;background:var(--sunk);padding:1px 5px;border-radius:4px;white-space:nowrap}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:center;margin-bottom:26px}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(30px,4.6vw,52px);font-weight:800;letter-spacing:-.01em;line-height:1.05;margin:10px 0 14px}
+.hero .lede{color:var(--mute);font-size:17px;max-width:62ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn:hover{border-color:var(--acc)}
+.demos{display:grid;grid-template-columns:0.56fr 1fr;gap:12px;align-items:end}
+.demos figure{margin:0;display:grid;gap:6px}
+.demos video{width:100%;border-radius:12px;border:1px solid var(--line);background:#000;display:block}
+.demos figcaption{font-size:13px;color:var(--mute)}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding-block:10px;border-bottom:1px solid var(--line);margin-bottom:30px;scrollbar-width:thin}
+nav.toc a{flex:none;text-decoration:none;color:var(--ink);font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 13px;white-space:nowrap}
+nav.toc a .n{font-family:var(--mono);font-size:11px;color:var(--faint);margin-right:6px}
+section{margin-bottom:56px;scroll-margin-top:72px}
+.sh{display:grid;gap:8px;margin-bottom:18px}
+.sh h2{font-size:clamp(23px,2.6vw,30px);font-weight:800}
+.sh p{color:var(--mute);max-width:80ch}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:10px;align-content:start}
+.card h3{font-size:18px;font-weight:800}
+.card p,.card li{color:var(--mute);font-size:15px}
+.card ul{margin:0;padding-left:18px;display:grid;gap:5px}
+.pill{font-family:var(--mono);font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--acc-soft);color:var(--acc);justify-self:start}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:620px}
+th{text-align:left;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);background:var(--sunk);padding:10px 12px;font-weight:600}
+td{border-top:1px solid var(--line);padding:10px 12px;vertical-align:top;text-wrap:balance}
+td:first-child{font-weight:700}
+.cmd{position:relative;background:var(--code);color:var(--code-ink);border-radius:12px;padding:14px 16px;font-family:var(--mono);font-size:13.5px;line-height:1.7;overflow-x:auto;white-space:pre}
+.cmd .cp{position:absolute;top:8px;right:8px;font-family:var(--sans);font-size:12px;font-weight:600;background:rgba(255,255,255,.1);color:var(--code-ink);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:4px 10px;cursor:pointer}
+.cmd .c{color:#7C8AA0}
+.steps{display:grid;gap:10px}
+.step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.step .num{width:40px;height:40px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font-weight:800;font-family:var(--mono)}
+.step h3{font-size:17px;font-weight:800;margin-bottom:4px}
+.step p{color:var(--mute);font-size:15px}
+.step .who{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;padding:1px 7px;border-radius:4px;margin-left:8px;vertical-align:middle}
+.who.u{background:var(--warn-soft);color:var(--warn)} .who.c{background:var(--acc-soft);color:var(--acc)} .who.m{background:var(--ok-soft);color:var(--ok)}
+.scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:860px){.scenes{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.scenes{grid-template-columns:1fr}}
+.scene{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:8px;align-content:start}
+.scene code.t{font-size:13px;color:var(--acc);background:var(--acc-soft);justify-self:start}
+.scene p{color:var(--mute);font-size:14.5px}
+.scene pre{margin:0;background:var(--sunk);border-radius:8px;padding:10px;font-family:var(--mono);font-size:12px;line-height:1.55;overflow-x:auto;white-space:pre}
+.check li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:start}
+.check ul{padding-left:0}
+.check li::before{content:"";width:16px;height:16px;border-radius:4px;border:2px solid var(--acc);margin-top:4px}
+.shot{border-radius:12px;border:1px solid var(--line);width:100%;display:block}
+.note{background:var(--warn-soft);border-radius:12px;padding:14px 16px;font-size:15px}
+.foot{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;color:var(--faint);font-size:13.5px;display:grid;gap:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header class="hero">
+  <div>
+    <span class="eyebrow">Skill cho Claude Code · MIT · tiếng Việt</span>
+    <h1>Biến tài liệu thành video minh hoạ, khổ dọc hoặc ngang</h1>
+    <p class="lede">Hai skill đọc tài liệu của bạn, viết kịch bản, tạo giọng đọc tiếng Việt, phụ đề karaoke khớp từng từ, nhạc nền, dựng hình hoạt hình theo màu thương hiệu, tự soát lỗi rồi xuất video đạt chuẩn đăng mạng xã hội. Không dùng AI tạo video, không cần khoá API.</p>
+    <div class="cta">
+      <a class="btn pri" href="https://github.com/trungbuu/video-minh-hoa-skills" target="_blank" rel="noopener">Mở repo trên GitHub</a>
+      <a class="btn" href="https://github.com/trungbuu/video-minh-hoa-skills/archive/refs/heads/main.zip" target="_blank" rel="noopener">Tải file ZIP</a>
+      <a class="btn" href="#cai-dat">Cài đặt trong 2 phút</a>
+    </div>
+  </div>
+  <div class="demos">
+    <figure><video src="media/mau-doc.mp4" poster="media/mau-doc.jpg" controls playsinline preload="none"></video><figcaption>Khổ dọc 9:16, 30 giây</figcaption></figure>
+    <figure><video src="media/mau-ngang.mp4" poster="media/mau-ngang.jpg" controls playsinline preload="none"></video><figcaption>Khổ ngang 16:9, 30 giây</figcaption></figure>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Mục lục">
+  <a href="#chon"><span class="n">01</span>Chọn skill</a>
+  <a href="#cai-dat"><span class="n">02</span>Cài đặt</a>
+  <a href="#cach-lam"><span class="n">03</span>Cách làm</a>
+  <a href="#kich-ban"><span class="n">04</span>Viết kịch bản</a>
+  <a href="#nhan-duoc"><span class="n">05</span>Điều nhận được</a>
+  <a href="#bo-sung"><span class="n">06</span>Cần bổ sung</a>
+  <a href="#loi"><span class="n">07</span>Lỗi hay gặp</a>
+</nav>
+
+<section id="chon">
+  <div class="sh"><h2>Chọn skill theo nơi đăng</h2><p>Hai skill dùng chung cách làm, chung sáu kiểu cảnh và chung bộ kiểm. Khác nhau ở khổ hình và bố cục. Cùng một kịch bản có thể dựng ra cả hai khổ.</p></div>
+  <div class="grid2">
+    <div class="card"><span class="pill">video-minh-hoa-doc</span><h3>Khổ dọc 1080×1920</h3>
+      <p>Tiêu đề trên, hình giữa, phụ đề phía trên vùng nút của ứng dụng. Tự chừa vùng an toàn cho TikTok và Reels.</p>
+      <ul><li>TikTok, Reels, YouTube Shorts, Zalo</li><li>Mẹo ngắn, quy trình 3 bước, thông báo nội bộ</li><li>20 đến 90 giây</li></ul></div>
+    <div class="card"><span class="pill">video-minh-hoa-ngang</span><h3>Khổ ngang 1920×1080</h3>
+      <p>Chữ ở cột trái, hình minh hoạ ở khối bên phải, phụ đề dưới giữa khung. Nhịp chậm hơn, hợp nội dung dài.</p>
+      <ul><li>YouTube, buổi đào tạo, màn hình chiếu, website</li><li>Hướng dẫn, chính sách, báo cáo, bài giảng</li><li>30 đến 180 giây</li></ul></div>
+  </div>
+</section>
+
+<section id="cai-dat">
+  <div class="sh"><h2>Cài đặt</h2><p>Tải repo về, chạy script cài đặt, script chép hai skill vào thư mục skill của Claude Code và báo phần mềm nào còn thiếu.</p></div>
+  <div class="grid2">
+    <div class="card"><h3>1. Tải và cài skill</h3>
+<div class="cmd"><button class="cp" type="button">Sao chép</button>git clone https://github.com/trungbuu/video-minh-hoa-skills.git
+cd video-minh-hoa-skills
+./install.sh</div>
+      <p>Không dùng git thì bấm “Tải file ZIP”, giải nén rồi chép hai thư mục trong <code>skills/</code> vào <code>~/.claude/skills/</code>.</p></div>
+    <div class="card"><h3>2. Cài phần mềm nền</h3>
+<div class="cmd"><button class="cp" type="button">Sao chép</button><span class="c"># macOS</span>
+brew install node ffmpeg
+pip install numpy pillow playwright gTTS openai-whisper
+<span class="c"># Windows</span>
+winget install OpenJS.NodeJS Gyan.FFmpeg
+pip install numpy pillow playwright gTTS openai-whisper</div>
+      <p>gTTS và openai-whisper không bắt buộc. Thiếu gTTS thì dùng giọng macOS. Thiếu whisper thì căn lời theo năng lượng, kém chính xác hơn một chút.</p></div>
+  </div>
+  <div class="tbl" style="margin-top:14px"><table>
+    <thead><tr><th>Thành phần</th><th>Bắt buộc</th><th>Dùng để</th></tr></thead>
+    <tbody>
+      <tr><td>Claude Code</td><td>có</td><td>chạy skill, viết kịch bản, điều phối các bước</td></tr>
+      <tr><td>Node.js 18+</td><td>có</td><td>chạy HyperFrames qua npx để render, tự tải Chrome headless lần đầu</td></tr>
+      <tr><td>ffmpeg, ffprobe</td><td>có</td><td>xử lý âm thanh, ghép video, đo độ lớn tiếng</td></tr>
+      <tr><td>Python 3.9+ với numpy, Pillow, playwright</td><td>có</td><td>tạo nhạc, mix, tự soát khung hình</td></tr>
+      <tr><td>gTTS</td><td>nên có</td><td>giọng đọc tiếng Việt miễn phí, cần mạng</td></tr>
+      <tr><td>openai-whisper, model base</td><td>nên có</td><td>căn lời theo từng từ cho phụ đề karaoke</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="cach-lam">
+  <div class="sh"><h2>Cách làm, 6 bước</h2><p>Bạn chỉ làm ở bước 1, 2 và 6. Claude làm phần còn lại và chỉ giao video khi mọi chỉ số đều đạt.</p></div>
+  <div class="steps">
+    <div class="step"><span class="num">1</span><div><h3>Đưa tài liệu <span class="who u">bạn</span></h3><p>Đặt file vào thư mục làm việc và gõ yêu cầu, ví dụ “Làm video dọc 45 giây minh hoạ quy-trinh-hoan-tien.md cho nhân viên mới”. Tài liệu có thể là markdown, PDF, Word đã lưu thành văn bản, hoặc nội dung dán thẳng.</p></div></div>
+    <div class="step"><span class="num">2</span><div><h3>Trả lời bốn câu và duyệt kế hoạch <span class="who u">bạn</span></h3><p>Video để làm gì, ai xem, đăng ở đâu, xem xong người xem nên làm gì. Claude đề xuất thông điệp chính, số cảnh, độ dài và lời mời cuối, rồi chờ bạn đồng ý.</p></div></div>
+    <div class="step"><span class="num">3</span><div><h3>Tạo dự án và gắn thương hiệu <span class="who c">Claude</span></h3><p>Tạo thư mục dự án từ template, áp màu, phông và logo nếu bạn có. Không có thì dùng màu trung tính có sẵn.</p></div></div>
+    <div class="step"><span class="num">4</span><div><h3>Viết kịch bản và kiểm trước <span class="who c">Claude</span></h3><p>Viết <code>script.json</code> với các cảnh và dòng lời, rồi chạy bộ kiểm độ dài chữ, neo và thời lượng ước tính trước khi tốn thời gian tạo giọng.</p></div></div>
+    <div class="step"><span class="num">5</span><div><h3>Dựng, tự soát, nghiệm thu <span class="who m">tự động</span></h3><p>Tạo giọng, căn lời, nhạc và âm thanh nhấn, dựng hình, tự soát khung hình, render, xuất phụ đề và chạy cổng nghiệm thu. Video 30 giây mất vài phút, phần lớn cho bước tạo giọng và render.</p></div></div>
+    <div class="step"><span class="num">6</span><div><h3>Xem và yêu cầu chỉnh <span class="who u">bạn</span></h3><p>Xem video và tấm ghép khung hình. Muốn sửa câu chữ, màu hay độ dài thì nói thẳng, Claude chạy lại đúng bước cần thiết.</p></div></div>
+  </div>
+</section>
+
+<section id="kich-ban">
+  <div class="sh"><h2>Sáu kiểu cảnh có sẵn</h2><p>Mọi video ghép từ sáu kiểu cảnh này, khai trong <code>script.json</code>. Bạn không cần tự viết, nhưng biết các kiểu cảnh giúp bạn yêu cầu đúng ý. Chi tiết đầy đủ ở <code>references/kich-ban.md</code> trong mỗi skill.</p></div>
+  <div class="scenes">
+    <div class="scene"><code class="t">hook</code><p>Mở đầu bằng câu hỏi hoặc nỗi đau, nhân vật cầm bảng, bong bóng dấu hỏi.</p><pre>{ "type": "hook",
+  "headline": "Họp mãi mà\nkhông [ra việc]?" }</pre></div>
+    <div class="scene"><code class="t">list</code><p>Liệt kê 2 đến 5 bước hoặc thành phần, hiện lần lượt theo nhịp nhạc.</p><pre>{ "type": "list",
+  "items": [["1","Chốt mục tiêu"],
+            ["2","Giới hạn giờ"]] }</pre></div>
+    <div class="scene"><code class="t">point</code><p>Một ý có nhân vật, đạo cụ và tối đa 3 chip từ khoá.</p><pre>{ "type": "point", "prop": "clipboard",
+  "chips": ["Viết một câu"] }</pre></div>
+    <div class="scene"><code class="t">quiz</code><p>Hỏi và đáp theo tình huống, dải đáp án hiện đúng lúc giọng đọc trả lời.</p><pre>{ "type": "quiz", "answer": {
+  "text": "Mỗi việc một người",
+  "at": {"line": 6, "word": "mỗi"} } }</pre></div>
+    <div class="scene"><code class="t">stat</code><p>Một con số lớn đếm lên, số phải có trong tài liệu.</p><pre>{ "type": "stat", "value": 15,
+  "unit": "′", "label": "phút là đủ" }</pre></div>
+    <div class="scene"><code class="t">cta</code><p>Thẻ kết có logo, tiêu đề và các dòng liên hệ.</p><pre>"cta": { "headline": "Họp ngắn,\n[ra việc]",
+  "rows": [["Mẫu", "Thư mục chung"]] }</pre></div>
+  </div>
+</section>
+
+<section id="nhan-duoc">
+  <div class="sh"><h2>Điều nhận được</h2><p>Mỗi video giao kèm bốn file và một tấm ghép để duyệt nhanh. Cổng nghiệm thu đo bằng số, video chỉ tới tay bạn khi mọi mục đều đạt.</p></div>
+  <div class="grid2">
+    <div class="tbl"><table>
+      <thead><tr><th>File trong renders/</th><th>Dùng khi</th></tr></thead>
+      <tbody>
+        <tr><td>…_giong-doc.mp4</td><td>bản gốc có giọng đọc, chất lượng cao</td></tr>
+        <tr><td>…_social.mp4</td><td>đăng mạng xã hội, dung lượng khoảng 4 MB cho 30 giây</td></tr>
+        <tr><td>…_khong-loi.mp4</td><td>lồng giọng người thật hoặc chỉ cần nhạc</td></tr>
+        <tr><td>….srt</td><td>tải phụ đề lên YouTube, Facebook</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Chuẩn nghiệm thu</th><th>Mức</th></tr></thead>
+      <tbody>
+        <tr><td>Độ lớn tiếng</td><td>-14 LUFS ± 1, chuẩn mạng xã hội</td></tr>
+        <tr><td>Đỉnh thật</td><td>từ -1 dBTP trở xuống</td></tr>
+        <tr><td>Nhạc so với lời</td><td>thấp hơn 4 đến 6 dB khi đang nói</td></tr>
+        <tr><td>Hình</td><td>đúng khổ, 30 fps, không khung đen</td></tr>
+        <tr><td>Tự soát chữ</td><td>0 lỗi tràn, đè, lọt vùng an toàn, ngắt từ ghép</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>Tấm ghép tự soát</h3><p>Mỗi ô là một khoảnh khắc quan trọng, ô có lỗi viền đỏ. Dải dưới là dạng sóng âm thanh, vạch đỏ là âm thanh nhấn, vạch xanh là đầu mỗi câu phụ đề.</p>
+    <img class="shot" src="media/tu-soat-ngang.jpg" alt="Tấm ghép tự soát của video mẫu khổ ngang" loading="lazy"></div>
+</section>
+
+<section id="bo-sung">
+  <div class="sh"><h2>Điều cần bổ sung</h2><p>Skill lo phần dựng. Những thứ dưới đây phải do bạn chuẩn bị, vì chúng quyết định video đúng thông điệp và đúng thương hiệu.</p></div>
+  <div class="grid2">
+    <div class="card check"><h3>Bạn chuẩn bị</h3><ul>
+      <li><span>Tài liệu nguồn chứa mọi con số và nhận định muốn đưa vào video</span></li>
+      <li><span>Mục đích video, người xem và nơi đăng</span></li>
+      <li><span>Một lời mời cuối video kèm thông tin liên hệ đã kiểm</span></li>
+      <li><span>Logo PNG nền trong, bản đầy đủ và bản dấu</span></li>
+      <li><span>Màu thương hiệu và tên phông, phông phải có dấu tiếng Việt</span></li>
+      <li><span>Đồng ý bằng văn bản nếu dùng tên, lời chứng thực của người thật</span></li>
+    </ul></div>
+    <div class="card"><h3>Giới hạn hiện tại</h3><ul>
+      <li>Giọng gTTS còn máy móc. Muốn giọng tự nhiên, có thể bật OpenAI hoặc Gemini TTS với khoá API của bạn, có tính phí.</li>
+      <li>Nhạc nền là bản tổng hợp giữ chỗ. Nên thay bằng nhạc có bản quyền qua mục <code>audio.music</code>.</li>
+      <li>Hình là nhân vật người que và đạo cụ vẽ sẵn, chưa có ảnh sản phẩm hay cảnh quay thật.</li>
+      <li>Chưa có khổ vuông 1:1 và 4:5.</li>
+      <li>Nội dung phụ đề, giọng đọc tối ưu cho tiếng Việt.</li>
+    </ul></div>
+  </div>
+  <p class="note" style="margin-top:14px">Để video chuyển đổi tốt hơn, mỗi video chỉ nên có một thông điệp, câu mở đầu nói thẳng nỗi đau của người xem và chỉ một lời mời ở cuối. Nếu dùng cho quảng cáo, nhờ Claude xuất thêm 2 đến 3 câu mở đầu khác nhau để thử.</p>
+</section>
+
+<section id="loi">
+  <div class="sh"><h2>Lỗi hay gặp</h2></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Hiện tượng</th><th>Cách xử lý</th></tr></thead>
+    <tbody>
+      <tr><td>Báo thiếu ffprobe khi render</td><td>cài ffmpeg bản đầy đủ; trong lúc chờ skill tự dùng bộ render dự phòng, chậm hơn</td></tr>
+      <tr><td>Chữ tiếng Việt lỗi dấu khi dán vào dòng lệnh</td><td>đưa nội dung vào file, không dán tiếng Việt thẳng vào terminal trên Windows</td></tr>
+      <tr><td>Video dài hoặc ngắn hơn mong muốn</td><td>nói “rút còn 45 giây”, bộ kiểm ước tính độ dài trước khi dựng lại</td></tr>
+      <tr><td>Máy đọc sai tên tiếng Anh hoặc số điện thoại</td><td>Claude thêm cách đọc riêng cho dòng đó, phụ đề vẫn giữ nguyên</td></tr>
+      <tr><td>Hình hoặc âm thanh nhấn lệch lời</td><td>hình và âm thanh neo theo từ; kiểm từ neo có đúng nguyên văn trong phụ đề không</td></tr>
+      <tr><td>Chữ bị ô đỏ trong tấm tự soát</td><td>rút ngắn tiêu đề hoặc chip; không thu nhỏ chữ</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer class="foot">
+  <p>Repo github.com/trungbuu/video-minh-hoa-skills, mã nguồn MIT. Phông Be Vietnam Pro theo SIL Open Font License 1.1. HyperFrames (Apache-2.0), GSAP, whisper và gTTS được tải khi chạy, không nằm trong repo.</p>
+  <p>Video mẫu dùng nội dung minh hoạ “họp 15 phút”, giọng gTTS và nhạc tổng hợp.</p>
+</footer>
+</div>
+
+<script>
+/* ============================================================
+   vi-type.js — ràng buộc ngắt dòng cho tiếng Việt
+   ------------------------------------------------------------
+   Tiếng Việt viết rời từng âm tiết nên trình duyệt sẵn sàng ngắt
+   giữa hai âm tiết của một từ ghép, làm câu mất nghĩa tức thời
+   (“lao ⏎ động”, “cá ⏎ nhân”, “điện ⏎ tử”). CSS không xử lý được
+   việc này vì trình duyệt không biết ranh giới từ ghép tiếng Việt.
+
+   Tệp này nối các âm tiết đó bằng khoảng trắng không ngắt (U+00A0),
+   chỉ với danh sách từ ghép đã duyệt, nên không đoán sai.
+
+   Hàm chạy được nhiều lần mà không hỏng, vì \s trong JavaScript
+   đã bao gồm U+00A0 nên lần chạy sau không tạo thay đổi mới.
+   ============================================================ */
+(function (root) {
+  "use strict";
+
+  /* Từ ghép hai âm tiết xuất hiện trong nội dung của các trang.
+     Chỉ thêm từ thật sự không được phép tách. */
+  var PAIRS = [
+    // pháp lý và tuân thủ
+    "chứng minh","tuân thủ","quy định","nghị định","văn bản","pháp lý","chế tài",
+    "hiệu lực","xử phạt","thời hiệu","phạm vi","áp dụng","căn cứ","ban hành",
+    "thay thế","chuyển tiếp","tội phạm","nguyên tắc","thủ tục","trường hợp",
+    "quyền lợi","trách nhiệm","bằng chứng","chứng cứ","mức phạt","khắc phục",
+    // lao động và bảo hiểm
+    "lao động","bảo hiểm","hợp đồng","thử việc","chấm dứt","tuyển dụng",
+    "tiền lương","bảng lương","thời giờ","làm việc","làm thêm","nghỉ phép",
+    "phép năm","nghỉ việc","điều chuyển","quyết toán","kỷ luật","nội quy",
+    "đối thoại","thương lượng","thỏa ước","tập thể","đại diện","công đoàn",
+    "thất nghiệp","chậm đóng","trốn đóng","đăng ký","điều chỉnh","xác nhận",
+    "giấy phép","thu hồi","xuất cảnh","thanh lý","nước ngoài","đặc thù",
+    "thành niên","cao tuổi","khuyết tật","giúp việc","gia đình","nhân sự",
+    // an toàn và y tế
+    "an toàn","vệ sinh","sức khỏe","tai nạn","môi trường","thiết bị",
+    "huấn luyện","quan trắc","phương tiện","bảo vệ","khẩn cấp","rủi ro",
+    // quản trị và vận hành
+    "doanh nghiệp","tổ chức","hồ sơ","biểu mẫu","dữ liệu","phòng ban",
+    "quản lý","quản trị","vận hành","kế toán","rà soát","kiểm tra","đối chiếu",
+    "phát hiện","hoàn thành","cập nhật","theo dõi","ghi nhận","xác định",
+    "đánh giá","phân công","triển khai","giải quyết","xây dựng","thực hiện",
+    "sử dụng","bảo đảm","yêu cầu","phê duyệt","phụ trách","công việc",
+    "đầu việc","nghiệp vụ","danh mục","tiến độ","nội bộ","định kỳ","bắt buộc",
+    "khuyến nghị","tổng quan","tổng hợp","chi phí","thanh toán","công bố",
+    "lưu trữ","truy cập","ứng viên","tài khoản","ủy quyền","chữ ký","điện tử",
+    "cá nhân","lĩnh vực","thực tế","chính xác","phần việc","duy nhất",
+    // nội dung chung của kênh
+    "tài liệu","tham khảo","chia sẻ","chi tiết","tối ưu","bổ sung","dấu hiệu",
+    "lãnh đạo","hỗ trợ","sự cố","tự bạch","toàn cảnh","bức tranh","trình duyệt",
+    // bổ sung sau đợt quét khổ 390px và 1440px ngày 15/9/2026
+    "hằng ngày","hằng tuần","hằng tháng","hằng quý","hằng năm","ngày tháng","năm trước",
+    "thời gian","thời hạn","trước khi","đối với","tương đương","tương ứng","liên quan",
+    "pháp luật","bộ luật","thông tư","công báo","điều khoản","điều kiện","quy chế",
+    "quyết định","sửa đổi","thay đổi","hiện hành","vi phạm","xử lý","tố tụng","trục xuất",
+    "tranh chấp","quấy rối","tình dục","cải chính","biên bản","báo cáo","thông báo",
+    "thông tin","nội dung","kết quả","hình thức","hoạt động","hành động","hệ thống",
+    "kiểm soát","phân quyền","bảo mật","cơ chế","cấu trúc","danh sách","bàn giao",
+    "đối soát","khai trình","hành chính","tài chính","thu nhập","kinh phí","số tiền",
+    "tiền lãi","bồi thường","trợ cấp","bồi dưỡng","chấm công","công khai","công tác",
+    "chứng nhận","chứng từ","giấy tờ","lệ phí","môn bài","ngân hàng","khách hàng",
+    "bên ngoài","tiếp cận","trí tuệ","đôn đốc","thường xuyên","ưu tiên","ưu đãi",
+    "đi vắng","minh họa","định hướng","ứng cứu","nghiêm ngặt","nghề nghiệp","nuôi con",
+    "việc làm","xã hội","Việt Nam","uỷ quyền","thỏa thuận","thoả thuận","thoả ước",
+    // cụm ba âm tiết là một khái niệm, không để rớt âm tiết cuối
+    "người lao động","người giúp việc","nơi làm việc","bệnh nghề nghiệp","chữ ký số",
+    "chủ sở hữu","bất động sản","sử dụng lao động",
+    // vai trò, nhóm và tần suất trong sổ tay tuân thủ
+    "giám đốc","kỹ thuật","pháp chế","tư vấn","tư vấn thuế","hoá đơn","hóa đơn",
+    "sở hữu trí tuệ","sở hữu","kiểm kê","khôi phục","sao lưu","giao dịch","lợi nhuận",
+    "chính sách","sản phẩm","phiên bản","thuê bao","văn phòng","thành lập","tăng vốn",
+    "duy trì","liên tục","đột xuất","diễn tập","gia hạn","văn bằng","thư viện",
+    "nhà cung cấp","cung cấp","phân bổ","sai sót","khai thuế","giá trị gia tăng",
+    "đóng sổ","bố trí","thay người","kỳ hạn",
+    // landing page khoá học AI, bổ sung khi dựng Lazy AI Advanced ngày 15/9/2026
+    "sưu tầm","công cụ","học viên","bài toán","quy trình","kỹ năng","tư duy","học phí",
+    "buổi học","ghi hình","đầu ra","đầu vào","nghiệm thu","tiêu chí","phân rã","ngữ cảnh",
+    "ví dụ","kết hợp","thế mạnh","đóng gói","tận dụng","thị trường","tiếp theo","hướng dẫn",
+    "chuyển khoản","điện thoại","nâng cao","doanh thu","người mua","người đọc","nhân viên",
+    "trợ lý","vấn đề","giải pháp","hiệu quả","phù hợp","chuẩn bị","trả phí","lặp lại",
+    "bắt đầu","nhật ký","thương hiệu","chân dung","định dạng","tự động","cộng đồng",
+    "hoàn tiền","liên hệ","câu hỏi","chương trình","lộ trình","kinh nghiệm","dược phẩm",
+    "làm đẹp","điều hành","tra cứu","đồng hành","trọn bộ","dẫn đường","số liệu","sự thật",
+    "chạy thử","thực hành","khảo sát","mô hình","song song","kiểm chứng","hậu quả",
+    "lời khuyên","tiếp quản","phần mềm","trạng thái","nguồn gốc","bài tập","kế tiếp",
+    "lỗi thời","phát sinh","chất liệu","tỉ lệ","email xác nhận","mạng xã hội","quà tặng",
+    "Bửu Trung","Lazy AI","Lazy Team","Lazy News","Claude Code","Google Meet","Zalo OA",
+    "cuối cùng","mỗi tuần","mỗi tháng","mỗi buổi","một lần","hai công cụ","lý thuyết",
+    "phán đoán","con người","sản phẩm","thực chiến","bộ quy tắc","demo đối chứng",
+    // video và phong cách hình ảnh
+    "chuẩn hóa","trả lời","tự tin","chắc chắn","phong cách","tối giản","công nghệ",
+    "sang trọng","thủ công","thập niên","đen trắng","sổ tay","còn tiếp","cắt giấy",
+    "hoạt hình","nhạc nền","phụ đề","lời dẫn","chuyển động","nhịp điệu","ngành hàng"
+  ];
+
+  var LETTER = "A-Za-zÀ-ỹĐđ";
+  /* đơn vị đi sau con số, không được rớt xuống dòng dưới */
+  var UNIT = "năm|tháng|ngày|tuần|giờ|phút|lần|người|điều|khoản|chương|mục|nhóm|việc|triệu|tỷ|nghìn|đồng|%";
+  /* nhãn văn bản pháp luật đi trước con số */
+  var LABEL = "Điều|Khoản|Chương|Mục|Nghị định|Luật|Thông tư|Bộ luật|Case";
+
+  var esc = function (s) { return s.replace(/ /g, "\\s"); };
+  PAIRS = PAIRS.filter(function (v, i, a) { return a.indexOf(v) === i; })
+               .sort(function (a, b) { return b.length - a.length; });
+  var RE_PAIR  = new RegExp("(?<![" + LETTER + "])(" + PAIRS.map(esc).join("|") + ")(?![" + LETTER + "])", "giu");
+  var RE_UNIT  = new RegExp("(\\d)\\s+(" + UNIT + ")(?![" + LETTER + "])", "giu");
+  var RE_LABEL = new RegExp("(?<![" + LETTER + "])(" + LABEL + ")\\s+(\\d)", "gu");
+  var RE_DATE  = new RegExp("(?<![" + LETTER + "])(ngày|từ ngày|đến ngày)\\s+(\\d)", "giu");
+  var NB = "\u00A0";
+
+  /* Không đụng vào logo, wordmark, mã và ô nhập liệu. */
+  var SKIP = "script,style,code,pre,textarea,input,select,.lz,.wm,.mono";
+
+  function bind(scope) {
+    var start = scope || document.body;
+    if (!start) return 0;
+    var walker = document.createTreeWalker(start, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        var el = node.parentElement;
+        if (!el || el.closest(SKIP)) return NodeFilter.FILTER_REJECT;
+        if (!node.nodeValue || node.nodeValue.indexOf(" ") === -1) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node, changed = 0;
+    while ((node = walker.nextNode())) {
+      var before = node.nodeValue;
+      var after = before
+        .replace(RE_PAIR,  function (m) { return m.replace(/\s/g, NB); })
+        .replace(RE_UNIT,  function (m, a, b) { return a + NB + b; })
+        .replace(RE_LABEL, function (m, a, b) { return a + NB + b; })
+        .replace(RE_DATE,  function (m, a, b) { return a.replace(/\s/g, NB) + NB + b; });
+      if (after !== before) { node.nodeValue = after; changed++; }
+    }
+    return changed;
+  }
+
+  root.viType = { bind: bind, pairs: PAIRS };
+
+  /* Trang tĩnh chạy ngay. Trang React gọi lại viType.bind() sau mỗi lần vẽ. */
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () { bind(); });
+  } else {
+    bind();
+  }
+})(window);
+
+</script>
+<script>
+(function(){
+  document.querySelectorAll(".cmd .cp").forEach(function(b){
+    b.addEventListener("click",function(){
+      var box=b.parentElement, t=box.innerText.replace(/^Sao chép\s*/,"").replace(/^Đã chép\s*/,"").trim();
+      var done=function(){ b.textContent="Đã chép"; setTimeout(function(){ b.textContent="Sao chép"; },1500); };
+      try{ navigator.clipboard.writeText(t).then(done,function(){ sel(box); }); }catch(e){ sel(box); }
+    });
+  });
+  function sel(el){ var r=document.createRange(); r.selectNodeContents(el); var s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+  function noWidow(root){
+    root.querySelectorAll("p,li span,li,td,th,h2,h3,figcaption").forEach(function(el){
+      var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),last=null,n;
+      while((n=w.nextNode())) if(n.nodeValue.trim()) last=n;
+      if(!last||last.parentElement.closest("pre,.cmd,code")) return;
+      var v=last.nodeValue,m=v.match(/ (\S{1,14})\s*$/);
+      if(m){var i=v.lastIndexOf(" "+m[1]);last.nodeValue=v.slice(0,i)+" "+v.slice(i+1);}
+    });
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),t;
+    while((t=w.nextNode())){ if(t.parentElement&&t.parentElement.closest("pre,.cmd,code")) continue;
+      var v=t.nodeValue,nv=v.replace(/([A-Za-z0-9_.<>~])([-\/])(?!⁠)(?=[A-Za-z0-9_.<>*])/g,"$1$2⁠");
+      if(nv!==v) t.nodeValue=nv; }
+  }
+  function run(){ if(window.viType) window.viType.bind(document.body); noWidow(document.body); }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run); else run();
+})();
+</script>
+
+</body>
+</html>

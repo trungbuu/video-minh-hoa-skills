@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+# dự án người dùng tạo ra khi thử, không đưa lên repo
+projects/
+renders/
+review/
+audio/voice/_cache/

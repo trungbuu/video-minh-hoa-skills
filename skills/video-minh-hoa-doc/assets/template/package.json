@@ -1,0 +1,9 @@
+{
+  "name": "story",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.75 preview",
+    "check": "npx --yes hyperframes@0.8.75 check"
+  }
+}

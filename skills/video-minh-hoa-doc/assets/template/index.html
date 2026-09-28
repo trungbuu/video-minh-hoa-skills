@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi" data-resolution="portrait">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>Video kể chuyện</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="brand.css">
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="30" data-width="1080" data-height="1920">
+  <div id="scene" class="clip" data-start="0" data-duration="30">
+    <svg id="stage" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div id="brand" data-safe="ignore"><img src="assets/mark.png" alt="" onerror="this.remove()"><span id="brand-name"></span></div>
+    <div id="dots" data-safe="ignore"></div>
+    <div id="title"><div id="kicker"></div><div id="headline"></div><div id="subhead"></div></div>
+    <div id="chips"></div>
+    <div id="answer"></div>
+    <div id="endcard">
+      <img class="ec-logo" src="assets/logo.png" alt="" onerror="this.remove()">
+      <div class="ec-k"></div>
+      <div class="ec-h"></div>
+      <div class="ec-card"></div>
+    </div>
+    <div id="caption"></div>
+  </div>
+  <!-- Stem nhạc chỉ để hyperframes beats đo phách nên tắt tiếng. Tiếng thật là bản master, tools/render.py remux lại sau khi render. -->
+  <audio id="music" data-timeline-role="music" src="audio/music.wav" data-start="0" data-duration="30" data-volume="0"></audio>
+  <audio id="master" src="audio/mix.wav" data-start="0" data-duration="30" data-volume="1"></audio>
+</div>
+<script src="vendor/stick-figure-rig.js"></script>
+<script src="vendor/heads.js"></script>
+<script src="vendor/lib.js"></script>
+<script src="vendor/vi-type.js"></script>
+<script src="data.js"></script>
+<script src="vendor/story.js"></script>
+<script src="scene.js"></script>
+<script>
+  document.getElementById("brand-name").textContent = (window.META && window.META.brand) || "";
+  window.__timelines = window.__timelines || {};
+  window.__timelines["main"] = window.StyleLab.timeline;
+</script>
+</body>
+</html>
