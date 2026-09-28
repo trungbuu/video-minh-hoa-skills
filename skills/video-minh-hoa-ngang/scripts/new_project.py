@@ -10,7 +10,7 @@ Thư mục đích phải chưa có hoặc đang trống, để không ghi đè d
 import argparse, pathlib, re, shutil, sys
 
 SKILL = pathlib.Path(__file__).resolve().parent.parent
-IGN = shutil.ignore_patterns(".DS_Store", "__pycache__", "renders", "review", "_cache")
+IGN = shutil.ignore_patterns(".DS_Store", "__pycache__", "renders", "review", "_cache", ".gitkeep")
 ap = argparse.ArgumentParser(description="Tạo dự án video mới")
 ap.add_argument("dest")
 ap.add_argument("--brand", help="file brand.css của thương hiệu")
@@ -22,6 +22,7 @@ if dest.exists() and any(dest.iterdir()):
     sys.exit(f"Thư mục {dest} đã có nội dung, hãy chọn thư mục khác.")
 shutil.copytree(SKILL / "assets" / "template", dest, dirs_exist_ok=True, ignore=IGN)
 (dest / "tools").mkdir(exist_ok=True)
+(dest / "audio").mkdir(exist_ok=True)
 for f in (SKILL / "assets" / "pipeline").glob("*.py"):
     shutil.copy2(f, dest / "tools" / f.name)
 shutil.copy2(SKILL / "assets" / "vi-guard" / "vi-type.js", dest / "vendor" / "vi-type.js")
