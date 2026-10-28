@@ -61,3 +61,5 @@ licenses/                      giấy phép phông chữ
 ## Giấy phép
 
 Mã nguồn theo giấy phép MIT, xem [LICENSE](LICENSE). Phông Be Vietnam Pro theo SIL Open Font License 1.1, xem [licenses/BeVietnamPro-OFL.txt](licenses/BeVietnamPro-OFL.txt). HyperFrames (Apache-2.0), GSAP, whisper và gTTS không nằm trong repo, được tải khi chạy.
+
+> Ngày 1/10/2026 hai skill video-minh-hoa-doc và video-minh-hoa-ngang đã được gộp thành preset `tai-lieu-doc-9x16` và `tai-lieu-ngang-16x9` trong `claude-video-skill-v2/skills/motion-video-full/presets/`. Thư mục `skills/` cũ không còn ở đây.
